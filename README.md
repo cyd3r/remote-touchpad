@@ -46,6 +46,7 @@ A web server will listen to port 3000 and will serve a web page to control your 
 
 - authentification
 - performance improvements
+- make ports configurable
 
 ## Frontend
 
