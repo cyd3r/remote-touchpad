@@ -16,7 +16,7 @@ const colourScroll = '#415a91'
 // const maxPings = 5
 // const minBadPing = 200
 
-const ws = new WebSocket(`ws://${location.hostname}:8080`)
+const ws = new WebSocket(`ws://${location.host}`)
 
 // function addPing(ping) {
 //     pingQueue.push(ping)

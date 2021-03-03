@@ -1,12 +1,15 @@
 // this is file contains the main functionality of the remote touchpad
 // you can connect with any WebSocket library and control the mouse
 
+const http = require('http')
 const robot = require('robotjs')
 const WebSocket = require('ws')
 const express = require('express')
 const qr = require('qrcode')
 const open = require('open')
 const os = require('os')
+
+const port = process.env.PORT || 3000
 
 function acceleratedDelta(body, sensitivity) {
     return {
@@ -38,7 +41,8 @@ function getMyIP() {
     return addresses[0]
 }
 
-const wss = new WebSocket.Server({ port: 8080 })
+const server = http.createServer()
+const wss = new WebSocket.Server({ server })
 
 wss.on('connection', (ws) => {
     ws.on('message', (message) => {
@@ -57,7 +61,6 @@ wss.on('connection', (ws) => {
 })
 
 const app = express()
-const port = 3000
 
 app.use('/', express.static('frontend'))
 
@@ -70,7 +73,8 @@ app.get('/qr', (req, res) => {
         .catch(console.error);
 })
 
-app.listen(port, () => {
+server.on('request', app)
+server.listen(port, () => {
     console.log(`Listening on port ${port}`)
     // open a web page with instructions on how to use the software
     open(`http://${getMyIP()}:${port}/instructions.html`)
