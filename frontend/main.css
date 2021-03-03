@@ -11,21 +11,3 @@ html, body {
     top: 0;
     left: 0;
 }
-
-.img-row {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-}
-
-img {
-    width: 100%;
-}
-
-figure {
-    text-align: center;
-}

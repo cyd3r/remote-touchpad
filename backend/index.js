@@ -64,7 +64,7 @@ app.use('/', express.static('frontend'))
 app.get('/qr', (req, res) => {
     qr.toBuffer(`http://${getMyIP()}:${port}`, { type: 'png' })
         .then(buffer => {
-            res.type("png")
+            res.type('png')
             res.send(buffer);
         })
         .catch(console.error);

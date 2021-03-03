@@ -52,5 +52,3 @@ A web server will listen to port 3000 and will serve a web page to control your 
 
 - Touchpad Field
 - Settings
-
-Gesture icons from Jeff Portaro on [pixelbuddha](https://pixelbuddha.net/freebie/touch-gestures-icons)
