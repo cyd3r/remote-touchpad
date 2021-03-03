@@ -2,19 +2,13 @@
 
 This tool provides a web interface to control your computer's mouse. Simply open the web page on your phone!
 
-Uses hammer.js for detecting touch gestures and RobotJS to control the computer.
+Uses [hammer.js](https://hammerjs.github.io/) for detecting touch gestures and [RobotJS](http://robotjs.io/) to control the computer.
 
 ## Build instructions
 
-Take a look at hammer.js
+Run `yarn` to install the required dependencies.
 
-You need to have yarn installed
-
-``` sh
-# install dependencies
-yarn
-sudo apt-get install libxtst-dev libpng++-dev
-```
+If there are issues using RobotJS, take a look here: http://robotjs.io/docs/building
 
 ## Run the server
 
@@ -30,17 +24,17 @@ A web server will listen to port 3000 and will serve a web page to control your 
 
 ### POST `/move`
 
-- deltaX: number
-- deltaY: number
+- `deltaX`: number
+- `deltaY`: number
 
 ### POST `/click`
 
-- button: string
+- `button`: string
 
 ### POST `/scroll`
 
-- deltaX: number
-- deltaY: number
+- `deltaX`: number
+- `deltaY`: number
 
 ## TODO
 
